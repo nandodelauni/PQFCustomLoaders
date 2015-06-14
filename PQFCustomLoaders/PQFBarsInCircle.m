@@ -85,7 +85,14 @@
 
 - (void)remove {
     [self hide];
+    [self stopAnimations];
     [self removeFromSuperview];
+}
+
+- (void)stopAnimations
+{
+    [self.loaderLayer removeAllAnimations];
+    [self.bars makeObjectsPerformSelector:@selector(removeAllAnimations)];
 }
 
 #pragma mark - private methods

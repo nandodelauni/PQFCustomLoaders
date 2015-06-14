@@ -80,7 +80,15 @@
 
 - (void)remove {
     [self hide];
+    [self stopAnimations];
     [self removeFromSuperview];
+}
+
+- (void)stopAnimations
+{
+    [self.ball1 removeAllAnimations];
+    [self.ball2 removeAllAnimations];
+    [self.ball3 removeAllAnimations];
 }
 
 #pragma mark Custom Setters

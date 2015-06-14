@@ -77,7 +77,13 @@
 
 - (void)remove {
     [self hide];
+    [self stopAnimations];
     [self removeFromSuperview];
+}
+
+- (void)stopAnimations
+{
+    [self.balls makeObjectsPerformSelector:@selector(removeAllAnimations)];
 }
 
 #pragma mark Custom Setters
